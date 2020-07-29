@@ -1,0 +1,151 @@
+<html lang="en">
+    <head >
+        <title>index</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
+    </head>
+    <body style="background-color: cadetblue;">
+       <h3> <%= data  %> </h3>
+       <div class="container">
+           <div class="row" >
+               <div class="offset-2 col-4 mt-3">
+                  <h1 >Details.....</h1> 
+               </div>
+               <div class="offset-2 col-4 mt-4">
+                <p id="p1" style="font-size: 20px; font-weight: bold; color: aliceblue; text-shadow: 5px 5px 10px aqua;"></p> 
+             </div>
+           </div>
+            <form name="myform" action="/" style="background-color: rgb(0,0,0,0.3); border-radius:8px; padding: 10px;"  method="POST" onsubmit="return validate()">
+      <div class="form-row">
+                <div class="form-group col">
+                    <label for="name" >Name : </label>
+                    <input type="text" class="form-control" name="name" id="name" >
+                    <small style="color: red; visibility:hidden; position: absolute;" id="sname">*** !please enter the name</small>
+                </div>
+
+                <div class="form-group col">
+                    <label for="lname" >L_Name : </label>
+                    <input type="text" class="form-control" name="lname" id="lname" >
+                    <small style="color: red; visibility:hidden; position: absolute;" id="slname">*** !please enter the last name</small>
+                </div>
+       </div>
+                <div class="form-group ">
+                    <label for="mobile" >Mobile_Number :</label>
+                    <input name="mno" type="number" class="form-control" id="mno" >
+                    <small style="color: red; visibility:hidden; position: absolute;" id="smno">*** !please enter the mobile  number only 10 character</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" >Email :</label>
+                    <input type="email" class="form-control" name="email" required >
+                </div>
+
+    <div class="form-row">
+                <div class="form-group col">
+                    <label  for="gender">Gender :</label>
+                    <div class="form-check">
+                        <input type="radio" name="gender" class="form-check-input" value="male" checked>
+                        <label  class="form-check-label">Male</label>
+                    </div>
+                   
+                    <div class="form-check">
+                        <input type="radio" name="gender" class="form-check-input" value="female">
+                        <label  class="form-check-label">female</label>
+                    </div>
+                    
+                </div>
+
+                <div class="form-group col">
+
+                    <label for="hobbies" >Hobbies : </label>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" name="hobbies" value="playing" class="form-check-input" checked>
+                        <label for="">playing</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" name="hobbies" value="TVwatching" class="form-check-input">
+                        <label for="">TVwathing</label>
+                    </div>
+
+                    <div class="form-check ">
+                        <input type="checkbox" name="hobbies" value="reading" class="form-check-input">
+                        <label for="" class="form-check-label">reading</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" name="hobbies" value="drawing" class="form-check-input">
+                        <label for="" class="form-check-label">Drawing</label>
+                    </div>
+
+                </div>
+        </div>
+                <div class="form-group ">
+                    <label for="qualification">Qualification : </label>
+                    <select name="qualification" id="qualification" class="form-control" pattern=/B/ required >
+                        <option  selected disabled>--choose--</option>
+                        <option value="B.tech">B.tech</option>
+                        <option value="BBA">BBA</option>
+                        <option value="12+">12+</option>
+                        <option value="other">other</option>
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                <div class="form-group col">
+                    <input type="submit" value="Submit" class="btn btn-success btn-block">
+                </div>
+
+                <div class="form-group col">
+                    <input type="reset" class="btn btn-danger btn-block">
+                </div>
+                </div>
+
+             </form>
+         </div>
+
+<script>
+       setInterval(()=>{
+           var d=new Date();
+              document.getElementById("p1").innerHTML=d.toLocaleTimeString();
+        },1000);
+</script> 
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script>
+   
+    function validate(){
+     var name=document.getElementById("name").value; 
+    
+     if(!(/^([a-zA-Z]+)$/).test(name)){
+         document.getElementById("sname").style.visibility="visible";
+         return false;
+     }
+
+     var lname=document.getElementById("lname").value; 
+    
+     if(!(/^([a-zA-Z]+)$/).test(lname)){
+        document.getElementById("sname").style.visibility="hidden";
+         document.getElementById("slname").style.visibility="visible";
+         return false;
+     }
+
+     var mno=document.getElementById("mno").value; 
+    
+     if(!(/^\d{10}/).test(mno)){
+        document.getElementById("slname").style.visibility="hidden";
+         document.getElementById("smno").style.visibility="visible";
+         return false;
+     }
+ }
+ </script>
+ 
+</body>
+</html>
